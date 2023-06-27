@@ -1,0 +1,27 @@
+@import url(//db.onlinewebfonts.com/c/12420e8c141ca7c3dff41de2d59df13e?family=BeaufortforLOL-Bold);
+
+body {
+  background: url("https://cdnb.artstation.com/p/assets/images/images/023/396/515/original/francois-hurtubise-untitled3.gif?1579070361") no-repeat;
+  background-position: 40% 0;
+  background-color: #517181;
+  background-size: cover;
+
+  margin: 0;
+  padding: 0;
+
+  font-family: BeaufortforLOL-Bold, Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+body::-webkit-scrollbar {
+  width: 0vw;
+}
+
+.regionIcon {
+  filter: drop-shadow(0 0 2px #2C2C2C);
+}
+
+.chooseRegionLi:hover .regionIcon {
+  transform: scale(1.2);
+  transition-duration: .5s;
+}
