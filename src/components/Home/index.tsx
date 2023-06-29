@@ -1,9 +1,14 @@
+import { useNavigate } from "react-router-dom";
+
 export const Home = () => {
+
+    const navigate = useNavigate();
+    const goToRegion = (regionChosen: string) => navigate(`/region?${regionChosen}`)
+
     return (
         <div className='flex justify-around mt-10 mb-20 ms-10'>
-            
+
             <main className='w-1/2'>
-                
 
                 <div>
                     <h2 className='text-center my-10'>Choose the region</h2>
@@ -23,6 +28,7 @@ export const Home = () => {
                                 "freljord",
                                 "void",
                                 "zaun"].map((region, key) => {
+                                    const regionId: string = region;
                                     let regionName: string = region;
 
                                     switch (regionName) {
@@ -42,7 +48,7 @@ export const Home = () => {
                                             break;
                                     }
 
-                                    return <li key={key} className='chooseRegionLi cursor-pointer'>
+                                    return <li key={key} id={regionId} className='chooseRegionLi cursor-pointer' onClick={() => goToRegion(regionId)}>
                                         <figure className='flex flex-col'>
                                             <img className='regionIcon h-24 object-contain' src={`https://universe.leagueoflegends.com/images/${region}_crest_icon.png`} alt={`${regionName} Icon`} />
                                             <figcaption className='text-center my-2'>{regionName}</figcaption>
