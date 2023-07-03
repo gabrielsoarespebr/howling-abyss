@@ -22,7 +22,7 @@ export const Region = () => {
         "zaun": ["Blitzcrank", "Dr. Mundo", "Ekko", "Janna", "Jinx", "Renata Glasc", "Singed", "Twitch", "Urgot", "Viktor", "Warwick", "Zac", "Ziggs", "Zeri"]
     }
 
-    const champList : Array<string> = champByRegion[regionChosen]
+    const champList: Array<string> = champByRegion[regionChosen]
 
     const fixNameInURL = (champName: string) => {
         let champNameUpdated: string = champName
