@@ -22,9 +22,9 @@ function App() {
 
   useEffect(() => { fetchData() }, [])
 
-  useEffect(() => {
-    console.log(championListInitial);
-  }, [championListInitial])
+  // useEffect(() => {
+  //   console.log(championListInitial);
+  // }, [championListInitial])
 
   return (
     <BrowserRouter>

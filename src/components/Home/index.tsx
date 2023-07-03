@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Header } from "../Header";
+import nowhereIcon from '../../assets/images/nowhereIcon.png'
 
 export const Home = () => {
 
@@ -21,6 +22,7 @@ export const Home = () => {
                                 {["bandle_city",
                                     "bilgewater",
                                     "demacia",
+                                    "freljord",
                                     "iona",
                                     "ixtal",
                                     "noxus",
@@ -28,9 +30,9 @@ export const Home = () => {
                                     "shadow_isles",
                                     "shurima",
                                     "mt_targon",
-                                    "freljord",
                                     "void",
-                                    "zaun"].map((region, key) => {
+                                    "zaun",
+                                    "nowhere"].map((region, key) => {
                                         const regionId: string = region;
                                         let regionName: string = region;
 
@@ -53,7 +55,10 @@ export const Home = () => {
 
                                         return <li key={key} id={regionId} className='chooseRegionLi cursor-pointer' onClick={() => goToRegion(regionId)}>
                                             <figure className='flex flex-col'>
-                                                <img className='regionIcon h-24 object-contain' src={`https://universe.leagueoflegends.com/images/${region}_crest_icon.png`} alt={`${regionName} Icon`} />
+                                                <img className='regionIcon h-24 object-contain' src={`https://universe.leagueoflegends.com/images/${region}_crest_icon.png`} alt={`${regionName} Icon`} onError={({ currentTarget }) => {
+                                                    currentTarget.onerror = null; // prevents looping (font: https://stackoverflow.com/questions/34097560/react-js-replace-img-src-onerror)
+                                                    currentTarget.src = nowhereIcon;
+                                                }} />
                                                 <figcaption className='text-center my-2'>{regionName}</figcaption>
                                             </figure>
                                         </li>

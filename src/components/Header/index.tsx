@@ -1,7 +1,6 @@
 import React from 'react'
 import logo from '../../assets/images/howlingAbyss.png'
 import poppyGif from '../../assets/gifs/poppyGif.gif'
-// import malphiteGif from '../../assets/gifs/malphiteGif.gif'
 import ezrealGif from '../../assets/gifs/ezrealGif.gif'
 import threshGif from '../../assets/gifs/threshGif.gif'
 import azirGif from '../../assets/gifs/azirGif.gif'
@@ -14,7 +13,6 @@ export const Header: React.FC<{ regionName: string }> = ({ regionName }) => {
         bilgewater: "https://media.giphy.com/media/xUOxfdXk1AHGzGotgI/giphy.gif",
         demacia: poppyGif,
         iona: "https://static.wikia.nocookie.net/leagueoflegends/images/c/c9/Yasuo_Render.png",
-        // ixtal: malphiteGif,
         ixtal: "https://media.tenor.com/XB-4oqXr0l0AAAAi/picking-leaves-malphite.gif",
         noxus: "https://media.tenor.com/MbvQsweF5PoAAAAi/leblanc-league-of-legends.gif",
         piltover: ezrealGif,
@@ -23,12 +21,11 @@ export const Header: React.FC<{ regionName: string }> = ({ regionName }) => {
         mt_targon: "https://media.tenor.com/FvafCqUONFUAAAAi/zoe-league-of-legends.gif",
         freljord: "https://static.wikia.nocookie.net/leagueoflegends/images/2/2d/Nunu_Render.png",
         void: choGif,
-        zaun: "https://media.giphy.com/media/l1J9rCHY7XjENUMQo/giphy.gif"
+        zaun: "https://media.giphy.com/media/l1J9rCHY7XjENUMQo/giphy.gif",
+        nowhere: "https://media.tenor.com/-O9a6WKx4uAAAAAj/league-of-legends-league-of-legends-alistar.gif"
     }
 
     const decodeRegionName = (regionName: string) => {
-        console.log("essa é a função decode");
-
         let regionNameLocal: string = regionName
         switch (regionNameLocal) {
             case "iona":
