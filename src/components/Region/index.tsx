@@ -1,4 +1,5 @@
 import noPhotoChampion from '../../assets/images/noPhotoChampion.png'
+import { Header } from '../Header'
 
 export const Region = () => {
     const urlCurrent = document.URL
@@ -49,7 +50,8 @@ export const Region = () => {
 
     return (
         <div className="mb-20 mx-20">
-            {/* {regionChosen} */}
+            <Header regionName={regionChosen} />
+
             <ul className='flex flex-wrap justify-around gap-7'>
                 {champList.map((champName: string, key: number) => <li className="w-1/6" key={key}>
                     <img id="primaryImage" src={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${fixNameInURL(champName)}_0.jpg`} alt={champName} onError={({ currentTarget }) => {

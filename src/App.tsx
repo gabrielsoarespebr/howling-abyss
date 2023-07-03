@@ -2,7 +2,6 @@ import './App.css'
 import { useEffect, useState } from 'react'
 import { PoroScroll } from './components/PoroScroll'
 import { Home } from './components/Home'
-import logo from './assets/images/howlingAbyss.png'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Region } from './components/Region'
 
@@ -27,14 +26,8 @@ function App() {
     console.log(championListInitial);
   }, [championListInitial])
 
-
-
   return (
     <BrowserRouter>
-      <div className='flex justify-around w-1/2 m-auto my-10'>
-        <img className='w-20 aspect-square rounded drop-shadow-lg m-0' src={logo} alt="Howling Abyss Logo" />
-        <h1 className='text-4xl drop-shadow-lg'>Welcome to <p className='text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-600'>Howling Abyss</p></h1>
-      </div>
 
       <Routes>
         <Route path='/' element={<Home />} />
