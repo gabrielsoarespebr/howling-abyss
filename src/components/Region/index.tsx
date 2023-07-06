@@ -198,17 +198,27 @@ export const Region = () => {
         return champNameUpdated
     }
 
+    const skillId = ["Q", "W", "E", "R"];
+
     return (
         <div className="mb-20 mx-20">
             <Header regionName={regionChosen} />
 
             <ul className='flex flex-wrap justify-around gap-7'>
                 {champList.map((champName: string, key: number) => <li className="w-1/6" key={key}>
-                    <img id="primaryImage" src={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${fixNameInURL(champName)}_0.jpg`} alt={champName} onError={({ currentTarget }) => {
+                    <img className="primaryImage" src={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${fixNameInURL(champName)}_0.jpg`} alt={champName} onError={({ currentTarget }) => {
                         currentTarget.onerror = null; // prevents looping (font: https://stackoverflow.com/questions/34097560/react-js-replace-img-src-onerror)
                         currentTarget.src = noPhotoChampion;
                     }} />
-                    <p>{champName}</p>
+                    <p className='text-center' style={{ marginTop: "-40px" }}>{champName}</p>
+                    <ul className='championSkills flex justify-center mt-4'>
+                        {skillId.map((skill, key) => <li key={key}>
+                            <img className='opacity-50 hover:opacity-100 duration-200' src={`http://ddragon.leagueoflegends.com/cdn/11.14.1/img/spell/${champName}${skill}.png`} alt="" />
+                            <p className='text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-600' style={{ marginTop: "-20px" }}>
+                                {skill}
+                            </p>
+                        </li>)}
+                    </ul>
                 </li>)}
             </ul>
         </div>
