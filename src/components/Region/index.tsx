@@ -1,4 +1,5 @@
 import noPhotoChampion from '../../assets/images/noPhotoChampion.png'
+import noIconSkill from '../../assets/images/noIconSkill.png'
 import { Header } from '../Header'
 
 export const Region = () => {
@@ -212,8 +213,11 @@ export const Region = () => {
                     }} />
                     <p className='text-center' style={{ marginTop: "-40px" }}>{champName}</p>
                     <ul className='championSkills flex justify-center mt-4'>
-                        {skillId.map((skill, key) => <li key={key}>
-                            <img className='opacity-50 hover:opacity-100 duration-200' src={`http://ddragon.leagueoflegends.com/cdn/11.14.1/img/spell/${champName}${skill}.png`} alt="" />
+                        {skillId.map((skill, key) => <li className='w-1/4' key={key}>
+                            <img className='w-full opacity-50 hover:opacity-100 duration-200' src={`http://ddragon.leagueoflegends.com/cdn/11.14.1/img/spell/${champName}${skill}.png`} alt={`Champion ${skill} skill`} onError={({ currentTarget }) => {
+                                currentTarget.onerror = null; // prevents looping (font: https://stackoverflow.com/questions/34097560/react-js-replace-img-src-onerror)
+                                currentTarget.src = noIconSkill;
+                            }} />
                             <p className='text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-600' style={{ marginTop: "-20px" }}>
                                 {skill}
                             </p>
